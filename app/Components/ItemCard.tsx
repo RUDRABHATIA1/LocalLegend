@@ -42,7 +42,7 @@ const ItemCard = ({ id, name, cost, By, Dist, image }: ItemCardProps) => {
 
   const decreaseQty = () => {
     if (cartItem.quantity === 1) removeFromCart(id)
-    else removeFromCart(id, 1)
+    else removeFromCart(id)
   }
 
   return (

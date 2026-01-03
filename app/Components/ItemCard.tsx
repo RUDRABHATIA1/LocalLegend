@@ -5,7 +5,17 @@ import Image from 'next/image'
 import { MapPinCheckInside, Heart, Plus, Minus } from 'lucide-react'
 import { useCart } from '../Context/CartContext'
 
-const ItemCard = ({ id, name, cost, By, Dist, image }) => {
+  type ItemCardProps = {
+  id: number
+  name: string
+  cost: number
+  By: string
+  Dist: number
+  image: string
+}
+
+
+const ItemCard = ({ id, name, cost, By, Dist, image }: ItemCardProps) => {
   const { addToCart, removeFromCart, cartItems } = useCart()
   const [liked, setLiked] = useState(false)
 
@@ -23,6 +33,8 @@ const ItemCard = ({ id, name, cost, By, Dist, image }) => {
       Dist,
     })
   }
+
+
 
   const increaseQty = () => {
     addToCart({ ...cartItem, quantity: 1 })
